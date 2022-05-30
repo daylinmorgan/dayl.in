@@ -1,0 +1,37 @@
+{{ define "og-title" }}
+{{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "title" }}
+{{ .Title }} - {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<section class="container list">
+  <h1 class="title">{{ .Title }}</h1>
+  <ul>
+    {{ range (.Pages.GroupByParam "year").Reverse}}
+    <h3> {{ .Key }} </h3>
+    {{ range .Pages }}
+    <li>
+      <publication>
+        {{ $authornum := len .Params.authors }}
+          {{ range $index, $author := .Params.authors }}
+          {{ if eq ( $author ) "Morgan, D."}}
+            <b>{{$author}}</b>,
+          {{ else if eq (add $index +1) $authornum}}
+              and {{ $author }}
+          {{else}}
+            {{ $author }},
+          {{ end }}
+        {{ end }}
+        {{ .Title }}. <i> {{ .Params.journal }}.</i> {{ .Params.volume}} ({{ .Params.year }})
+      </publication>
+      {{ if .Params.doi }}
+      <a href="https://doi.org/{{.Params.doi}}"> DOI.</a>
+      <br><br>
+      {{end}}
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
