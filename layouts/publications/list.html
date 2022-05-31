@@ -23,7 +23,7 @@
             {{ $author }},
           {{ end }}
         {{ end }}
-        {{ .Title }}. <i> {{ .Params.journal }}.</i> {{ .Params.volume}} ({{ .Params.year }})
+        {{ .Title }}. <i> {{ .Params.journal }}.</i> ({{ .Params.year }})
       </publication>
       {{ if .Params.doi }}
       <a href="https://doi.org/{{.Params.doi}}"> DOI.</a>

@@ -1,10 +1,9 @@
 ---
 title: "Functionalized Lineage Tracing for the Study and Manipulation of Heterogeneous Cell Populations"
-authors: ['Morgan, D.', 'Gardner, A.', "Al'Khafaji, A.", 'Brock, A.']
+authors: ['Gardner, A.', 'Morgan, D.', "Al'Khafaji, A.", 'Brock, A.']
 journal: "Methods in Molecular Biology"
-volume: "Accepted"
 month: ""
-year: "2021"
-doi: ""
-id: "morgan2021a"
+year: "2022"
+doi: "10.1007/978-1-0716-1811-0_8"
+id: "Gardner2022"
 ---

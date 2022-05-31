@@ -1,4 +1,4 @@
-import argparse
+from pathlib import Path
 import os
 import textwrap
 import bibtexparser
@@ -55,9 +55,6 @@ def entry_parser(entry):
             entry["journal"].replace("\\", "").replace("{", "").replace("}", "")
         )
 
-    if entry["volume"].isdigit():
-        entry["volume"] = f"vol. {entry['volume']}"
-
     for key in metadata:
         if key not in entry.keys():
             entry[key] = ""
@@ -78,7 +75,6 @@ def make_markdown_strs(bib_db):
         title: "{entry['title']}"
         authors: {entry['authors']}
         journal: "{entry['journal']}"
-        volume: "{entry['volume']}"
         month: "{entry['month']}"
         year: "{entry['year']}"
         doi: "{entry['doi']}"
@@ -92,7 +88,7 @@ def make_markdown_strs(bib_db):
 
 def make_publications_dir(markdown_dict):
     print("Generating markdown documents")
-
+    (Path.cwd().parent / "content" /"publications").mkdir(exist_ok=True)
     for id, value in markdown_dict.items():
         with open(f"publications/{id}.md", "w") as f:
             f.write(value)
