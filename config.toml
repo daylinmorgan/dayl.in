@@ -77,6 +77,11 @@ pygmentsUseClasses = true # new add
     icon = "fas fa-envelope"
     weight = 4
     url = "mailto:me@dayl.in"
+[[params.social]]
+    name = "Start"
+    icon = "fas fa-terminal"
+    weight = 5
+    url = "https://start.dayl.in"
 
 # Menu links
 [[menu.main]]
