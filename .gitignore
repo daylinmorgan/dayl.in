@@ -44,3 +44,6 @@ hugo.linux
 /.hugo_build.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo,go
+
+# Local Netlify folder
+.netlify
