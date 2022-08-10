@@ -1,5 +1,4 @@
 {
-  "name": "@example/basics",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -18,5 +17,5 @@
     "astro-uno": "^0.1.5",
     "unocss": "^0.45.5",
     "vite": "^3.0.5"
-  }
+ }
 }
