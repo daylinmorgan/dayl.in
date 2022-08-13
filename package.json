@@ -1,0 +1,21 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.1.88",
+    "@unocss/preset-icons": "^0.45.5",
+    "@unocss/vite": "^0.45.5",
+    "astro": "^1.0.1",
+    "astro-uno": "^0.1.5",
+    "unocss": "^0.45.5",
+    "vite": "^3.0.5"
+  }
+}
