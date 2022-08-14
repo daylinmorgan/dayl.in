@@ -9,13 +9,11 @@ const { name, href, icon } = Astro.props as Props;
 ---
 
 <li class="
-	list-none
-	p-5
-	m-5
+	list-none p-5 m-5
 	b b-2 b-ctp-rosewater
 	rounded-2xl
-	shadow-lg shadow-ctp-red hover:shadow-ctp-mauve
-	hover:bg-ctp-mantle">
+	shadow-lg shadow-ctp-red
+	hover:(shadow-ctp-mauve b-ctp-mauve)">
 	<a href={href}>
 		<div class={icon+" md:text-7xl text-5xl text-ctp-rosewater hover:text-ctp-red"} aria-label={name}></div>
 	</a>

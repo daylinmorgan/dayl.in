@@ -1,6 +1,13 @@
-import { defineConfig, presetWebFonts, presetIcons } from 'unocss'
+import {
+  defineConfig,
+  presetWebFonts,
+  presetIcons,
+  transformerVariantGroup,
+} from "unocss";
 
 export default defineConfig({
+  transformers: [transformerVariantGroup()],
+
   presets: [
     presetIcons(),
     presetWebFonts({
@@ -16,11 +23,12 @@ export default defineConfig({
   theme: {
     colors: {
       ctp: {
+        crust: "#11111b",
+        mantle: "#181825",
         base: "#1e1e2e",
         text: "#cdd6f4",
         mauve: "#cba6f7",
         red: "#f38ba8",
-        mantle: "#181825",
         rosewater: "#f5e0dc",
       },
     },
