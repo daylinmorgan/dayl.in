@@ -9,13 +9,10 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.114",
-    "@unocss/preset-icons": "^0.45.30",
-    "@unocss/reset": "^0.45.30",
-    "@unocss/vite": "^0.45.30",
-    "astro": "^1.9.2",
-    "astro-uno": "^0.1.6",
-    "unocss": "^0.45.30",
-    "vite": "^3.2.7"
+    "@iconify/json": "^2.2.116",
+    "@unocss/preset-icons": "^0.55.7",
+    "@unocss/reset": "^0.55.7",
+    "astro": "^3.1.0",
+    "unocss": "^0.55.7"
   }
 }

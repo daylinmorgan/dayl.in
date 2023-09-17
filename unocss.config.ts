@@ -1,5 +1,6 @@
 import {
   defineConfig,
+  presetUno,
   presetWebFonts,
   presetIcons,
   transformerVariantGroup,
@@ -9,6 +10,7 @@ export default defineConfig({
   transformers: [transformerVariantGroup()],
 
   presets: [
+    presetUno(),
     presetIcons(),
     presetWebFonts({
       provider: "google", // default provider
