@@ -1,38 +1,59 @@
+import { flavors } from "@catppuccin/palette";
 import {
   defineConfig,
   presetUno,
-  presetWebFonts,
   presetIcons,
   transformerVariantGroup,
 } from "unocss";
 
-export default defineConfig({
-  transformers: [transformerVariantGroup()],
+const generatePalette = (): { [key: string]: string } => {
+  const colors: { [key: string]: string } = {};
+  console.log(flavors);
+  Object.keys(flavors.mocha.colors).forEach((colorName) => {
+    const sanitizedName = colorName
+      .replace("0", "zero")
+      .replace("1", "one")
+      .replace("2", "two");
+    colors[sanitizedName] = flavors.mocha.colors[colorName].hex;
+  });
 
-  presets: [
-    presetUno(),
-    presetIcons(),
-    presetWebFonts({
-      provider: "google", // default provider
-      fonts: {
-        // these will extend the default theme
-        sans: "Roboto",
-        mono: ["Fira Code", "Fira Mono:400,700"],
-        // custom ones
-      },
-    }),
+  return colors;
+};
+
+// TODO: use the typed iterator?
+const catppuccinColors = generatePalette();
+
+export default defineConfig({
+  preflights: [
+    {
+      layer: "mycss",
+      getCSS: () => `
+    body {
+      font-family: 'Recursive', monospace;
+      font-variation-settings: 'MONO' 1;
+    }
+   `,
+    },
   ],
+  transformers: [transformerVariantGroup()],
+  presets: [presetUno(), presetIcons()],
+  rules: [
+    ["font-casual", { "font-variation-settings": "'CASL' 1;" }],
+    ["font-mono-casual", { "font-variation-settings": "'MONO' 1, 'CASL' 1;" }],
+  ],
+  shortcuts: {
+    link: "cursor-pointer text-ctp-rosewater hover:text-ctp-mauve",
+  },
   theme: {
     colors: {
-      ctp: {
-        crust: "#11111b",
-        mantle: "#181825",
-        base: "#1e1e2e",
-        text: "#cdd6f4",
-        mauve: "#cba6f7",
-        red: "#f38ba8",
-        rosewater: "#f5e0dc",
-      },
+      ctp: catppuccinColors,
     },
   },
+  // layers: {
+  // mycss: 0.5,
+  // shortcuts: 0,
+  // components: 1,
+  // default: 2,
+  // utilities: 3,
+  // },
 });
