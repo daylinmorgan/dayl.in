@@ -8,7 +8,6 @@ import {
 
 const generatePalette = (): { [key: string]: string } => {
   const colors: { [key: string]: string } = {};
-  console.log(flavors);
   Object.keys(flavors.mocha.colors).forEach((colorName) => {
     const sanitizedName = colorName
       .replace("0", "zero")
