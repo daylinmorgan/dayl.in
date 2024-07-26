@@ -1,26 +1,43 @@
 ---
 export interface Props {
-	name: string;
-	href: string;
-	icon: string;
+  name: string;
+  href: string;
+  icon: string;
 }
 
 const { name, href, icon } = Astro.props as Props;
 ---
 
 <li>
-<div class="
-	group
-	list-none p-5 m-5 lg:w-full
-	b b-2 b-ctp-rosewater
-	rounded-2xl
-	shadow-lg shadow-ctp-red
-	hover:(shadow-ctp-mauve b-ctp-mauve text-ctp-red font-mono-casual font-black)
-  ">
-	<a href={href} class="flex">
-		<div class={icon+" md:text-7xl text-5xl text-ctp-rosewater group-hover:text-ctp-red"} aria-label={name}>
-    </div>
-    <div class="lg:text-3xl text-2xl my-auto mx-auto px-5"> {name} </div>
-	</a>
+  <div
+    list-none
+    p-5
+    m-5
+    lg:w-full
+    rounded-2xl
+    shadow-lg
+    shadow-ctp-red
+    hover:(shadow-ctp-mauve
+    b-ctp-mauve
+    text-ctp-red
+    font-mono-casual
+    font-black)
+    border="2 ctp-rosewater"
+    class="group"
+  >
+    <a href={href} flex>
+      <div
+        md:text-7xl
+        text-5xl
+        text-ctp-rosewater
+        group-hover:text-ctp-red
+        class={icon}
+        aria-label={name}
+      >
+      </div>
+      <div lg:text-3xl text-2xl my-auto mx-auto px-5>
+        {name}
+      </div>
+    </a>
   </div>
 </li>

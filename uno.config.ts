@@ -4,6 +4,7 @@ import {
   presetUno,
   presetIcons,
   transformerVariantGroup,
+  presetAttributify
 } from "unocss";
 
 const generatePalette = (): { [key: string]: string } => {
@@ -35,7 +36,7 @@ export default defineConfig({
     },
   ],
   transformers: [transformerVariantGroup()],
-  presets: [presetUno(), presetIcons()],
+  presets: [presetUno(), presetIcons(), presetAttributify()],
   rules: [
     ["font-casual", { "font-variation-settings": "'CASL' 1;" }],
     ["font-mono-casual", { "font-variation-settings": "'MONO' 1, 'CASL' 1;" }],
