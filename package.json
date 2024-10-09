@@ -10,16 +10,16 @@
     "format": "prettier -l -w **/*.{ts,astro}"
   },
   "dependencies": {
-    "@catppuccin/palette": "^1.2.0",
-    "@iconify/json": "^2.2.231",
-    "@unocss/preset-attributify": "^0.61.5",
-    "@unocss/preset-icons": "^0.61.5",
-    "@unocss/reset": "^0.61.5",
-    "astro": "^4.12.2",
-    "unocss": "^0.61.5"
+    "@catppuccin/palette": "^1.7.1",
+    "@iconify/json": "^2.2.293",
+    "@unocss/preset-attributify": "^0.65.4",
+    "@unocss/preset-icons": "^0.65.4",
+    "@unocss/reset": "^0.65.4",
+    "astro": "^5.1.4",
+    "unocss": "^0.65.4"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
